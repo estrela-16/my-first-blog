@@ -1,15 +1,22 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>blog secreto hehe</title>
     </head>
-    <h1>Muaha </h1>
-    <h2>HAHAHA</h2>
-    <aside>de ladinho</aside>
     <body>
-        <div>diva???</div>
-        <p>Veremos... <strong>UUUUU</strong> <em>AAAAAAAH</em> </p>
-        <p>It works! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaa</p>
-        <p>link :) <a href="https://djangogirls.org">djangogirls</a></p>
-        <ul><li>un</li><li>deux</li><li>trois</li><li>quatre</li><li>cinq</li></ul>
+
+        <header>
+            <h1><a href="/">Estrela's blog</a></h1>
+        </header>
+        
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>;)</p>
+            </article>
+        {% endfor %}
+
     </body>
 </html>
